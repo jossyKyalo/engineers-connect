@@ -1,0 +1,112 @@
+:host {
+      display: block;
+    }
+    
+    .hero {
+      height: 100vh;
+      min-height: 600px;
+      background-image: url('/assets/images/engineering-blueprint.jpg');
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      display: flex;
+      align-items: center;
+      color: #ffffff;
+    }
+    
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(rgba(0, 10, 30, 0.7), rgba(0, 20, 60, 0.8));
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .hero-content {
+      max-width: 700px;
+      margin-top: 80px;
+    }
+    
+    h1 {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 700;
+      margin-bottom: 16px;
+      line-height: 1.2;
+      color: #ffffff;
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    p {
+      font-size: clamp(1.25rem, 2vw, 1.5rem);
+      margin-bottom: 32px;
+      line-height: 1.5;
+      color: rgba(255, 255, 255, 0.9);
+    }
+    
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    
+    .btn {
+      display: inline-block;
+      padding: 12px 32px;
+      font-size: 16px;
+      font-weight: 500;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      text-align: center;
+    }
+    
+    .btn-primary {
+      background-color: #DE3C4B;
+      color: #ffffff;
+      border: 2px solid #DE3C4B;
+    }
+    
+    .btn-primary:hover {
+      background-color: darken(#DE3C4B, 10%);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    
+    .btn-outline {
+      background-color: transparent;
+      color: #ffffff;
+      border: 2px solid #ffffff;
+    }
+    
+    .btn-outline:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      transform: translateY(-2px);
+    }
+    
+    @media (max-width: 768px) {
+      .hero {
+        min-height: 500px;
+      }
+      
+      .hero-content {
+        text-align: center;
+        margin-top: 40px;
+      }
+      
+      .hero-actions {
+        justify-content: center;
+      }
+      
+      .btn {
+        width: 100%;
+      }
+    }

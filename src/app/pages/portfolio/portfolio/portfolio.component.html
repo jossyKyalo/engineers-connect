@@ -1,0 +1,114 @@
+<section class="page-header">
+      <div class="container">
+        <h1>Our Portfolio</h1>
+        <p>Explore our completed projects and engineering solutions</p>
+      </div>
+    </section>
+    
+    <section class="portfolio-filters">
+      <div class="container">
+        <div class="filter-buttons">
+          <button 
+            [class.active]="activeFilter === 'all'"
+            (click)="filterProjects('all')"
+          >
+            All Projects
+          </button>
+          @for (category of categories; track category) {
+            <button 
+              [class.active]="activeFilter === category"
+              (click)="filterProjects(category)"
+            >
+              {{category}}
+            </button>
+          }
+        </div>
+      </div>
+    </section>
+    
+    <section class="portfolio-grid">
+      <div class="container">
+        <div class="projects-grid">
+          @for (project of filteredProjects; track project.id) {
+            <div class="project-card" (click)="selectProject(project)">
+              <div class="project-image">
+                <img [src]="project.image" [alt]="project.title">
+                <div class="overlay">
+                  <span class="view-details">View Details</span>
+                </div>
+              </div>
+              <div class="project-info">
+                <span class="project-category">{{project.category}}</span>
+                <h3>{{project.title}}</h3>
+                <p>{{project.description.substring(0, 100)}}...</p>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+    </section>
+    
+    @if (selectedProject) {
+      <div class="project-modal" [class.open]="selectedProject">
+        <div class="modal-content">
+          <button class="close-modal" (click)="closeModal()">×</button>
+          
+          <div class="project-details">
+            <div class="project-header">
+              <div class="project-image">
+                <img [src]="selectedProject.image" [alt]="selectedProject.title">
+              </div>
+              <div class="project-title">
+                <span class="project-category">{{selectedProject.category}}</span>
+                <h2>{{selectedProject.title}}</h2>
+                <div class="project-client">
+                  <strong>Client:</strong> {{selectedProject.client}}
+                </div>
+              </div>
+            </div>
+            
+            <div class="project-body">
+              <div class="project-section">
+                <h3>Project Overview</h3>
+                <p>{{selectedProject.description}}</p>
+              </div>
+              
+              <div class="project-section">
+                <h3>Key Features</h3>
+                <ul class="features-list">
+                  @for (feature of selectedProject.features; track feature) {
+                    <li>{{feature}}</li>
+                  }
+                </ul>
+              </div>
+              
+              <div class="project-columns">
+                <div class="project-section">
+                  <h3>Challenges</h3>
+                  <p>{{selectedProject.challenges}}</p>
+                </div>
+                
+                <div class="project-section">
+                  <h3>Solutions</h3>
+                  <p>{{selectedProject.solutions}}</p>
+                </div>
+              </div>
+              
+              <div class="project-section">
+                <h3>Outcome</h3>
+                <p>{{selectedProject.outcome}}</p>
+              </div>
+              
+              <div class="project-section">
+                <h3>Technologies Used</h3>
+                <div class="technologies">
+                  @for (tech of selectedProject.technologies; track tech) {
+                    <span class="technology-tag">{{tech}}</span>
+                  }
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    }

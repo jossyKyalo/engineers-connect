@@ -1,0 +1,45 @@
+<section class="page-header">
+    <div class="container">
+        <h1>Our Services</h1>
+        <p>Comprehensive engineering solutions tailored to your needs</p>
+    </div>
+</section>
+
+<section class="services-list">
+    <div class="container">
+        <div class="services-grid">
+            @for (service of services; track service.id) {
+            <div class="service-card" [id]="service.id">
+                <div class="service-image">
+                    <img [src]="service.image" [alt]="service.title">
+                </div>
+                <div class="service-content">
+                    <div class="service-icon">
+                        <i class="{{service.icon}}"></i>
+                    </div>
+                    <h2>{{service.title}}</h2>
+                    <p>{{service.description}}</p>
+                    <div class="service-features">
+                        <h3>Key Features</h3>
+                        <ul>
+                            @for (feature of service.features; track feature) {
+                            <li><i class="fas fa-check"></i> {{feature}}</li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+</section>
+
+<section class="cta-section">
+    <div class="container">
+        <div class="cta-content">
+            <h2>Need a Custom Engineering Solution?</h2>
+            <p>Contact us today to discuss your specific requirements and how we can help bring your ideas to life.</p>
+            <a href="/contact" class="btn btn-primary">Get in Touch</a>
+        </div>
+    </div>
+</section>

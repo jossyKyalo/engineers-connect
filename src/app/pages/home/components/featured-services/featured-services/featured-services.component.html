@@ -1,0 +1,27 @@
+<section class="featured-services">
+    <div class="container">
+        <div class="section-header">
+            <h2>Our Services</h2>
+            <p>We provide comprehensive engineering solutions to meet your needs</p>
+        </div>
+
+        <div class="services-grid">
+            @for (service of services; track service.title) {
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="{{service.icon}}"></i>
+                </div>
+                <h3>{{service.title}}</h3>
+                <p>{{service.description}}</p>
+                <a [routerLink]="['/services', service.link]" class="service-link">
+                    Learn more <i class="icon-arrow-right"></i>
+                </a>
+            </div>
+            }
+        </div>
+
+        <div class="section-footer">
+            <a routerLink="/services" class="btn btn-outline">View All Services</a>
+        </div>
+    </div>
+</section>

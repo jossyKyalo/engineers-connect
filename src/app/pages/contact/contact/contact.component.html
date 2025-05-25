@@ -1,0 +1,181 @@
+<section class="page-header">
+    <div class="container">
+        <h1>Contact Us</h1>
+        <p>Get in touch with our team for inquiries, quotes, or any questions</p>
+    </div>
+</section>
+
+<section class="contact-info">
+    <div class="container">
+        <div class="contact-grid">
+            <div class="contact-details">
+                <h2>Our Contact Information</h2>
+                <p>Feel free to reach out to us using any of the following methods:</p>
+
+                <div class="contact-methods">
+                    <div class="contact-method">
+                        <div class="icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="info">
+                            <h3>Visit Us</h3>
+                            <p>123 Engineering Plaza, <br> Nairobi, Kenya</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-method">
+                        <div class="icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="info">
+                            <h3>Call Us</h3>
+                            <p>+254 123456789</p>
+                            <p>+254 987654321</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-method">
+                        <div class="icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="info">
+                            <h3>Email Us</h3>
+                            <p>info&#64;bennyengineering.com</p>
+                            <p>support&#64;bennyengineering.com</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-method">
+                        <div class="icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="info">
+                            <h3>Working Hours</h3>
+                            <p>Monday - Friday: 8:00 AM - 5:00 PM</p>
+                            <p>Saturday: 9:00 AM - 1:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="social-connect">
+                    <h3>Connect With Us</h3>
+                    <div class="social-icons">
+                        <a href="#" target="_blank" class="social-icon">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" target="_blank" class="social-icon">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" target="_blank" class="social-icon">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" target="_blank" class="social-icon">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form-container">
+                <h2>Send Us a Message</h2>
+                <p>Fill out the form below and we'll get back to you as soon as possible.</p>
+
+                <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" formControlName="name"
+                            [class.invalid]="nameControl.invalid && (nameControl.dirty || nameControl.touched)">
+                        @if (nameControl.invalid && (nameControl.dirty || nameControl.touched)) {
+                        <div class="error-message">
+                            @if (nameControl.errors?.['required']) {
+                            <span>Name is required</span>
+                            }
+                        </div>
+                        }
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" formControlName="email"
+                            [class.invalid]="emailControl.invalid && (emailControl.dirty || emailControl.touched)">
+                        @if (emailControl.invalid && (emailControl.dirty || emailControl.touched)) {
+                        <div class="error-message">
+                            @if (emailControl.errors?.['required']) {
+                            <span>Email is required</span>
+                            } @else if (emailControl.errors?.['email']) {
+                            <span>Please enter a valid email address</span>
+                            }
+                        </div>
+                        }
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" formControlName="phone">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Subject *</label>
+                        <input type="text" id="subject" formControlName="subject"
+                            [class.invalid]="subjectControl.invalid && (subjectControl.dirty || subjectControl.touched)">
+                        @if (subjectControl.invalid && (subjectControl.dirty || subjectControl.touched)) {
+                        <div class="error-message">
+                            @if (subjectControl.errors?.['required']) {
+                            <span>Subject is required</span>
+                            }
+                        </div>
+                        }
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" formControlName="message" rows="6"
+                            [class.invalid]="messageControl.invalid && (messageControl.dirty || messageControl.touched)"></textarea>
+                        @if (messageControl.invalid && (messageControl.dirty || messageControl.touched)) {
+                        <div class="error-message">
+                            @if (messageControl.errors?.['required']) {
+                            <span>Message is required</span>
+                            }
+                        </div>
+                        }
+                    </div>
+
+                    <div class="form-group form-submit">
+                        <button type="submit" class="btn btn-primary" [disabled]="contactForm.invalid || isSubmitting">
+                            @if (isSubmitting) {
+                            Sending Message...
+                            } @else {
+                            Send Message
+                            }
+                        </button>
+                    </div>
+
+                    @if (submitSuccess) {
+                    <div class="success-message">
+                        Your message has been sent successfully! We'll get back to you soon.
+                    </div>
+                    }
+
+                    @if (submitError) {
+                    <div class="error-message form-error">
+                        There was an error sending your message. Please try again later.
+                    </div>
+                    }
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="map-section">
+    <div class="container">
+        <h2>Find Us on the Map</h2>
+        <div class="map-container">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63820.65266129126!2d36.752525241796875!3d-1.2830673999999935!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1172d84d49a7%3A0xf7cf0254b297924c!2sNairobi%2C%20Kenya!5e0!3m2!1sen!2sus!4v1710930045319!5m2!1sen!2sus"
+                width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    </div>
+</section>

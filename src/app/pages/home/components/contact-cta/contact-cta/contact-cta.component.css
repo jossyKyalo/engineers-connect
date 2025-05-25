@@ -1,0 +1,100 @@
+:host {
+      display: block;
+    }
+    
+    .contact-cta {
+      background-color: #2B4570;
+      color: #ffffff;
+      padding: 80px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .contact-cta:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('/assets/images/pattern-bg.png');
+      opacity: 0.05;
+      z-index: 1;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .cta-content {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    
+    h2 {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: #ffffff;
+    }
+    
+    p {
+      font-size: 18px;
+      margin-bottom: 32px;
+      color: rgba(255, 255, 255, 0.9);
+    }
+    
+    .cta-actions {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    
+    .btn {
+      display: inline-block;
+      padding: 12px 32px;
+      font-size: 16px;
+      font-weight: 500;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-primary {
+      background-color: #DE3C4B;
+      color: #ffffff;
+      border: 2px solid #DE3C4B;
+    }
+    
+    .btn-primary:hover {
+      background-color: darken(#DE3C4B, 10%);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    
+    .btn-secondary {
+      background-color: transparent;
+      color: #ffffff;
+      border: 2px solid #ffffff;
+    }
+    
+    .btn-secondary:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      transform: translateY(-2px);
+    }
+    
+    @media (max-width: 768px) {
+      .cta-actions {
+        flex-direction: column;
+      }
+      
+      .btn {
+        width: 100%;
+      }
+    }

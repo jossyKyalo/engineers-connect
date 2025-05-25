@@ -1,0 +1,28 @@
+<section class="testimonials">
+      <div class="container">
+        <div class="section-header">
+          <h2>What Our Clients Say</h2>
+          <p>Feedback from our satisfied clients across various industries</p>
+        </div>
+        
+        <div class="testimonials-carousel">
+          @for (testimonial of testimonials; track testimonial.author) {
+            <div class="testimonial-card">
+              <div class="quote-icon">
+                <i class="icon-quote"></i>
+              </div>
+              <p class="quote">{{testimonial.quote}}</p>
+              <div class="testimonial-author">
+                <div class="author-image">
+                  <img [src]="testimonial.image" [alt]="testimonial.author">
+                </div>
+                <div class="author-info">
+                  <h4>{{testimonial.author}}</h4>
+                  <p>{{testimonial.position}}, {{testimonial.company}}</p>
+                </div>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+    </section>

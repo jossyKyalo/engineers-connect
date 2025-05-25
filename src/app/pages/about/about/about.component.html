@@ -1,0 +1,152 @@
+<section class="page-header">
+    <div class="container">
+        <h1>About Us</h1>
+        <p>Learn more about Benny Engineering Solutions and our team</p>
+    </div>
+</section>
+
+<section class="about-company">
+    <div class="container">
+        <div class="about-grid">
+            <div class="about-content">
+                <h2>Our Story</h2>
+                <p>
+                    Founded in 2010, Benny Engineering Solutions has grown from a small consulting firm to a
+                    comprehensive engineering company serving clients across East Africa and beyond. Our journey began
+                    with a simple mission: to provide innovative engineering solutions that exceed client expectations
+                    and contribute to sustainable development.
+                </p>
+                <p>
+                    With over a decade of experience, we've built a reputation for technical excellence, reliability,
+                    and customer-focused service. Our team of highly qualified engineers brings expertise across
+                    mechanical, electrical, civil, and other engineering disciplines to tackle complex challenges and
+                    deliver exceptional results.
+                </p>
+                <p>
+                    Today, we continue to push the boundaries of what's possible in engineering, embracing new
+                    technologies and methodologies to create solutions that are not only functional but also sustainable
+                    and forward-thinking.
+                </p>
+            </div>
+
+            <div class="about-image">
+                <img src="https://images.pexels.com/photos/3862130/pexels-photo-3862130.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    alt="Benny Engineering team at work">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="mission-vision">
+    <div class="container">
+        <div class="values-grid">
+            <div class="value-card">
+                <div class="icon">
+                    <i class="fas fa-bullseye"></i>
+                </div>
+                <h3>Our Mission</h3>
+                <p>
+                    To deliver innovative, sustainable engineering solutions that address complex challenges and exceed
+                    client expectations while contributing to the development of our communities.
+                </p>
+            </div>
+
+            <div class="value-card">
+                <div class="icon">
+                    <i class="fas fa-eye"></i>
+                </div>
+                <h3>Our Vision</h3>
+                <p>
+                    To be the leading engineering solutions provider in East Africa, recognized for technical
+                    excellence, innovation, and positive impact on the built environment and society.
+                </p>
+            </div>
+
+            <div class="value-card">
+                <div class="icon">
+                    <i class="fas fa-handshake"></i>
+                </div>
+                <h3>Our Values</h3>
+                <ul>
+                    <li><strong>Excellence:</strong> Delivering the highest quality in everything we do</li>
+                    <li><strong>Innovation:</strong> Embracing new ideas and technologies</li>
+                    <li><strong>Integrity:</strong> Maintaining ethical standards and transparency</li>
+                    <li><strong>Collaboration:</strong> Working together with clients and partners</li>
+                    <li><strong>Sustainability:</strong> Creating solutions that respect our environment</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="company-timeline">
+    <div class="container">
+        <h2>Our Journey</h2>
+        <div class="timeline">
+            @for (milestone of milestones; track milestone.year) {
+            <div class="timeline-item">
+                <div class="timeline-year">
+                    <span>{{milestone.year}}</span>
+                </div>
+                <div class="timeline-content">
+                    <h3>{{milestone.title}}</h3>
+                    <p>{{milestone.description}}</p>
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+</section>
+
+<section class="team-section">
+    <div class="container">
+        <h2>Meet Our Team</h2>
+        <p class="section-intro">
+            Our success is driven by our talented team of engineering professionals who bring expertise, creativity, and
+            dedication to every project.
+        </p>
+
+        <div class="team-grid">
+            @for (member of teamMembers; track member.name) {
+            <div class="team-card">
+                <div class="member-image">
+                    <img [src]="member.image" [alt]="member.name">
+                </div>
+                <div class="member-info">
+                    <h3>{{member.name}}</h3>
+                    <p class="position">{{member.position}}</p>
+                    <p class="bio">{{member.bio}}</p>
+                    <div class="social-links">
+                        @if (member.socialLinks.linkedin) {
+                        <a [href]="member.socialLinks.linkedin" target="_blank" class="social-link">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        }
+                        @if (member.socialLinks.twitter) {
+                        <a [href]="member.socialLinks.twitter" target="_blank" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        }
+                        @if (member.socialLinks.email) {
+                        <a [href]="'mailto:' + member.socialLinks.email" class="social-link">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        }
+                    </div>
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+</section>
+
+<section class="cta-section">
+    <div class="container">
+        <div class="cta-content">
+            <h2>Ready to Work With Us?</h2>
+            <p>Contact our team today to discuss your engineering needs and how we can help bring your projects to life.
+            </p>
+            <a href="/contact" class="btn btn-primary">Contact Us</a>
+        </div>
+    </div>
+</section>
