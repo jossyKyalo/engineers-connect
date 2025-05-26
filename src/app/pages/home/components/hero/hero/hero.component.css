@@ -5,7 +5,7 @@
     .hero {
       height: 100vh;
       min-height: 600px;
-      background-image: url('/assets/images/engineering-blueprint.jpg');
+      background-image: url('/engineering-blueprint.jpg');
       background-size: cover;
       background-position: center;
       position: relative;

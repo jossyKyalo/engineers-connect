@@ -20,21 +20,21 @@ interface Project {
 export class ProjectsShowcaseComponent {
   projects: Project[] = [
     {
-      image: '/assets/images/project-mechanical.jpg',
+      image: '/project-mechanical.png',
       title: 'Industrial Automation System',
       category: 'Mechanical Engineering',
       description: 'Custom automation system designed for manufacturing facility to improve efficiency and reduce operational costs.',
       link: 'industrial-automation'
     },
     {
-      image: '/assets/images/project-electrical.jpg',
+      image: '/project-electrical.png',
       title: 'Smart Building Integration',
       category: 'Electrical Engineering',
       description: 'Comprehensive smart building solution with integrated control systems for lighting, HVAC, and security.',
       link: 'smart-building'
     },
     {
-      image: '/assets/images/project-civil.jpg',
+      image: '/project-civil.png',
       title: 'Commercial Complex',
       category: 'Civil Engineering',
       description: 'Structural design and analysis for a multi-story commercial building with sustainable design elements.',
