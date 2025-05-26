@@ -19,25 +19,25 @@ interface Service {
 export class FeaturedServicesComponent {
   services: Service[] = [
     {
-      icon: 'icon-mechanical',
+      icon: 'fas fa-cogs',
       title: 'Mechanical Engineering',
       description: 'Comprehensive mechanical engineering solutions including design, analysis, and optimization for various industrial applications.',
       link: 'mechanical'
     },
     {
-      icon: 'icon-electrical',
+      icon: 'fas fa-bolt',
       title: 'Electrical Engineering',
       description: 'Expert electrical system design, automation, control systems, and power distribution solutions for all project sizes.',
       link: 'electrical'
     },
     {
-      icon: 'icon-civil',
+      icon: 'fas fa-drafting-compass',
       title: 'Civil Engineering',
       description: 'Structural design, analysis, and construction management services for buildings, infrastructure, and other civil projects.',
       link: 'civil'
     },
     {
-      icon: 'icon-consulting',
+      icon: 'fas fa-user-tie',
       title: 'Engineering Consulting',
       description: 'Professional consulting services providing expert advice on engineering projects, feasibility studies, and technical assessments.',
       link: 'consulting'
